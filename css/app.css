@@ -8,20 +8,31 @@ body {
 nav{
     border-bottom:1px solid black;
 }
-
-.path-grid{
-    padding:2%;
-    width:100%;
-    height:100%;
+.grid-row{
+    padding:0px;
+    margin:0px;
+    height:20px;
+    width:1600px;
+    
+}
+.grid-row-div{
+    margin:0;
+    padding:0;
+    height:20px;
 }
 
 .grid-element{
     width:20px;
     height:20px;
     padding:0px;
+    margin:0px;
     border:1px solid grey;
-    border-top:0px;
-    border-left:0px;
+    border-top:0px solid grey;
+    border-left:0px solid grey;
+    display:inline-block;
+}
+.path-grid{
+    width:1600px;
 }
 
 #row_0{
@@ -36,3 +47,23 @@ button{
     padding:5px;
 }
 
+.pointer-image{
+    height:19px;
+    width:19px;
+    margin:0px;
+    padding:0px;
+    display:none;
+}
+
+#legend{
+    margin:20px;
+}
+
+.circle-animation{
+    margin:0px;
+    padding:0px;
+    background-color:skyblue;
+    height:0px;
+    width:0px;
+    border-radius:50%;
+}
