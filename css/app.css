@@ -1,69 +1,109 @@
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
 
 body {
-    margin:0;
-    padding:0;
-    height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
-nav{
-    border-bottom:1px solid black;
+nav {
+  border-bottom: 1px solid black;
+  background-color: indigo;
 }
-.grid-row{
-    padding:0px;
-    margin:0px;
-    height:20px;
-    width:1600px;
-    
+.grid-row {
+  padding: 0px;
+  margin: 0px;
+  height: 20px;
+  width: 1600px;
 }
-.grid-row-div{
-    margin:0;
-    padding:0;
-    height:20px;
-}
-
-.grid-element{
-    width:20px;
-    height:20px;
-    padding:0px;
-    margin:0px;
-    border:1px solid grey;
-    border-top:0px solid grey;
-    border-left:0px solid grey;
-    display:inline-block;
-}
-.path-grid{
-    width:1600px;
+.grid-row-div {
+  margin: 0;
+  padding: 0;
+  height: 20px;
 }
 
-#row_0{
-    border-top:1px solid grey;
+.grid-element {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid grey;
+  border-top: 0px solid grey;
+  border-left: 0px solid grey;
+  display: inline-block;
+}
+#grid-container {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.path-grid {
+  width: 1600px;
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-right: 5px;
+  float: left;
 }
 
-#col_0{
-    border-left:1px solid grey;
-}
-button{
-    float:left;
-    padding:5px;
+#row_0 {
+  border-top: 1px solid grey;
 }
 
-.pointer-image{
-    height:19px;
-    width:19px;
-    margin:0px;
-    padding:0px;
-    display:none;
+#col_0 {
+  border-left: 1px solid grey;
 }
 
-#legend{
-    margin:20px;
+.pointer-image {
+  height: 19px;
+  width: 19px;
+  margin: 0px;
+  padding: 0px;
+  display: none;
 }
 
-.circle-animation{
-    margin:0px;
-    padding:0px;
-    background-color:skyblue;
-    height:0px;
-    width:0px;
-    border-radius:50%;
+.circle-animation {
+  margin: 0px;
+  padding: 0px;
+  background-color: skyblue;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+}
+
+#setting-buttons {
+  margin-right: 50px;
+  float: left;
+}
+
+#legend {
+  display: inline;
+}
+.legend-elem {
+  height: 20px !important;
+  width: 20px !important;
+  margin: 10px;
+  border: 1px solid grey;
+  float: left;
+}
+.legend-text {
+  width: 150px;
+  height: 20px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+#top-elem {
+  margin-top: 10px;
+  margin-left: 30px;
+  float: left;
+}
+#visited-legend {
+  background-color: skyblue;
+}
+#wall-legend {
+  background-color: black;
+}
+#path-legend {
+  background-color: yellow;
 }

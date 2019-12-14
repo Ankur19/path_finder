@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">Path Finder</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,21 +30,25 @@
           </ul>
         </div>
       </nav>
-      <div class='container'>
-        <p id='setting-buttons'>
-          <button id = 'wall' class='btn btn-light'>Build Wall</button>
-          <button id = 'maze' class='btn btn-light'>Draw Maze</button>
-          <button id = 'start' class='btn btn-light'>Start</button>
-        </p>
-        <br>
-        <p id='legend'>
+      <div id = 'grid-container' class='container'></div>
+        <div id = 'top-elem' class='container-fluid'>
+          <p id='setting-buttons'>
+            <button id = 'wall' class='btn btn-dark'>Build Wall</button>
+            <button id = 'maze' class='btn btn-dark'>Draw Maze</button>
+            <button id = 'start' class='btn btn-dark'>Start</button>
+          </p>
+          <p id="legend">
+            <img id='src-legend' class = 'legend-elem' src="../images/source.png"><h6 class = 'legend-text'>:Source</h6>
+            <img id='dest-legend'class = 'legend-elem' src="../images/destination.png"><h6 class = 'legend-text'>:Destination</h6>
+            <div id='grid-legend' class='grid-element legend-elem'></div><h6 class = 'legend-text'>:Empty Node</h6>
+            <div id='visited-legend' class='grid-element legend-elem'></div><h6 class = 'legend-text'>:Visited Node</h6>
+            <div id='wall-legend' class='grid-element legend-elem'></div><h6 class = 'legend-text'>:Wall Node</h6>
+            <div id='path-legend' class='grid-element legend-elem'></div><h6 class = 'legend-text'>:Path Taken</h6>
+          </p>
+        </div>
+        <div class="container-fluid path-grid">
           
-          
-        </p>
-      </div>
-      <p></p>
-      <div class="container-fluid path-grid">
-        
+        </div>
       </div>
       <input id='current-algo' value='shortest_path' hidden></input>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
