@@ -73,15 +73,14 @@ function onDragOver(event){
 
 function onDragEnter(event) {
     event.preventDefault();
-    var position = findIndex(event);
+    var elemIndex = findIndex(event);
     if(currentSelection=="wall"){
-        if(position != currentSource || position != currentDestination){
-            updateInvalid(position);
+        if(elemIndex != currentSource || elemIndex != currentDestination){
+            updateInvalid(elemIndex);
         }
     }
     else{
-        if(position[0] != undefined && position[1] != undefined){
-            var elemIndex = findIndex(event);
+        if(elemIndex[0] != undefined && elemIndex[1] != undefined && findNode(elemIndex).valid){
             if (currentSelection=="destination" && findNode(elemIndex).visited){
                 var nodes = findNode(currentDestination).visitedNodes;
                 var current = findNode(elemIndex).visitedNodes;
@@ -129,15 +128,24 @@ function onDragEnter(event) {
 
         var row = $(event.target).parent('div').attr("id").split("_")[1];
         var col = $(event.target).attr("id").split("_")[1];
+        
+        if(row != undefined && col != undefined && findNode([row,col]).valid){
 
-        $(event.target).append($pointer);
-        if(row != undefined || col != undefined){
+            $(event.target).append($pointer);
 
             if(id[0]=="source"){
                 currentSource = [row,col];
             }
             else if(id[0]=="destination"){
                 currentDestination = [row,col];
+            }
+        }
+        else{
+            if(id[0]=="source"){
+                findElement(currentSource).append($pointer);
+            }
+            else if(id[0]=="destination"){
+                findElement(currentDestination).append($pointer);
             }
         }
     }

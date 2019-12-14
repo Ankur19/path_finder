@@ -25,6 +25,16 @@ var wait = function(ms){
         }, ms)
     })
 };
+
+var fwait = function(ms, _function, arg){
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            _function(arg);
+            resolve("done");
+        }, ms)
+    });
+};
+
 var findElement = function(node){
     return $(`#row_${node[0]}`).find(`#col_${node[1]}`);
 };
@@ -91,7 +101,7 @@ var removeBackTrack = function(destination){
     return bt;
 };
 
-var visualizeNodes = async function(nodeList){
+var visualizeNodes = async function(nodeList, found){
     //starting from 1 since we donot visualize the source
     for(var i=1;i<nodeList.length;i++){
         if(i<50){
@@ -102,7 +112,13 @@ var visualizeNodes = async function(nodeList){
         }
         findElement(nodeList[i]).css("background-color","skyblue");
     }
-    backTrack(currentDestination);
+    if(found){
+        backTrack(currentDestination);
+    }
+    else{
+        alert("Destination Not Found..!!");
+    }
+    
 };
 
 $(document).ready(function(){
@@ -128,8 +144,9 @@ $(document).ready(function(){
             needVisit.push(currentSource);
             updateNodeWeight(currentSource, 0, null, null);
             var found = false;
+            var iterations = 0;
             var extraIterations = 0;
-            while (!found || (found && extraIterations<3)){
+            while ((!found && iterations < ((numRows*numCols)-1)) || (found && extraIterations<3)){
                 var newNodes = new Array();
                 needVisit.forEach(function(node){
                     findNode(node).edges.forEach(function(neighbour){
@@ -151,9 +168,10 @@ $(document).ready(function(){
                 });
                 newNodes.forEach(function(newNode){
                     needVisit.push(newNode);
-                })
+                });
+                iterations+=1;
             };
-            visualizeNodes(needVisit);
+            visualizeNodes(needVisit, found);
             currentRun+=1;
             $("#source").attr("draggable", "false");
         }
@@ -181,7 +199,7 @@ var bellmanFord = function(source, destination){
     var iterations = 0;
     var extraIterations = 0;
 
-    while (!found || (found && extraIterations<3)){
+    while ((!found && iterations < ((numRows*numCols)-1)) || (found && extraIterations<3)){
         var newNodes = new Array();
         needVisit.forEach(function(node){
             findNode(node).edges.forEach(function(neighbour){
@@ -200,9 +218,14 @@ var bellmanFord = function(source, destination){
         });
         newNodes.forEach(function(newNode){
             needVisit.push(newNode);
-        })
+        });
+        iterations+=1;
     };
-
-    backTrack(destination);
+    if(found){
+        backTrack(destination);
+    }
+    else{
+        alert("No Path Present..!!");
+    }
     
 };
