@@ -114,6 +114,7 @@ function onDragLeave(event) {
 }
 
 function onDrop(event) {
+  event.preventDefault();
   if (currentSelection != "wall") {
     const id = event.dataTransfer.getData("text").split("--");
 
