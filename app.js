@@ -2,7 +2,7 @@ var url = window.location.href;
 
 if (url.indexOf("index.html") == -1) {
   url = url + "index.html?algo=djikstra";
-  window.location.assign(url);
+  window.location.href(url);
 }
 
 url = new URL(url);
