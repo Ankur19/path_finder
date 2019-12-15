@@ -1,8 +1,8 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   height: 100%;
   width: 100%;
 }
@@ -15,11 +15,14 @@ nav {
   margin: 0px;
   height: 20px;
   width: 1600px;
+  border: 0px;
+  text-align: center;
 }
 .grid-row-div {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   height: 20px;
+  display: inline-block;
 }
 
 .grid-element {
@@ -30,7 +33,7 @@ nav {
   border: 1px solid grey;
   border-top: 0px solid grey;
   border-left: 0px solid grey;
-  display: inline-block;
+  display: inline-flex;
 }
 #grid-container {
   margin-left: 50px;
@@ -53,8 +56,8 @@ nav {
 }
 
 .pointer-image {
-  height: 19px;
-  width: 19px;
+  height: 20px;
+  width: 20px;
   margin: 0px;
   padding: 0px;
   display: none;

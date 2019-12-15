@@ -157,15 +157,18 @@ var ui = function(type) {
   if (type == "shortest_path" || type == "tree") {
     //Show the grid
     for (var j = 0; j < numRows; j++) {
-      $(".path-grid").append(`<p id='grid_row_${j}' class = 'grid-row'></p>`);
+      $(".path-grid").append(
+        `<div id='grid_row_${j}' class = 'grid-row'></div>`
+      );
       $(`#grid_row_${j}`).append(
         `<div id='row_${j}' class='grid-row-div'></div>`
       );
-      allNodes[j] = new Array(numCols);
+      allNodes[j] = new Array(numCols); // The comments in between the divs actally make the divs inline without whitespaces in between
       for (var i = 0; i < numCols; i++) {
         $(`#row_${j}`).append(
           `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
         );
+
         allNodes[j][i] = new Node(j, i);
       }
     }
