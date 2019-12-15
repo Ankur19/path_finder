@@ -6,9 +6,9 @@ var randomPoint = function(rows, cols) {
 // function to show source and destination pointers
 var placePointers = function() {
   var source =
-    '<img id = "source" class = "pointer-image" src = "../images/source.png" draggable=true ondragstart=\'onDragStart(event);\'>';
+    '<img id = "source" class = "pointer-image" src = "images/source.png" draggable=true ondragstart=\'onDragStart(event);\'>';
   var destination =
-    '<img id = "destination" class = "pointer-image" src = "../images/destination.png" draggable=true ondragstart=\'onDragStart(event);\'>';
+    '<img id = "destination" class = "pointer-image" src = "images/destination.png" draggable=true ondragstart=\'onDragStart(event);\'>';
 
   var sIndex = randomPoint(numRows, numCols);
   var dIndex = randomPoint(numRows, numCols);
@@ -26,28 +26,6 @@ var placePointers = function() {
   currentSource = sIndex;
   currentDestination = dIndex;
   $(".pointer-image").show();
-};
-
-// ui to show the grid for shortest paths
-var ui = function(type) {
-  if (type == "shortest_path") {
-    //Show the grid
-    for (var j = 0; j < numRows; j++) {
-      $(".path-grid").append(`<p id='grid_row_${j}' class = 'grid-row'></p>`);
-      $(`#grid_row_${j}`).append(
-        `<div id='row_${j}' class='grid-row-div'></div>`
-      );
-      allNodes[j] = new Array(numCols);
-      for (var i = 0; i < numCols; i++) {
-        $(`#row_${j}`).append(
-          `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
-        );
-        allNodes[j][i] = new Node(j, i);
-      }
-    }
-
-    placePointers();
-  }
 };
 
 var findIndex = function(event) {
@@ -172,6 +150,28 @@ function onDrop(event) {
   currentSelection = "";
   event.dataTransfer.clearData();
 }
+
+// ui to show the grid for shortest paths
+var ui = function(type) {
+  if (type == "shortest_path" || type == "tree") {
+    //Show the grid
+    for (var j = 0; j < numRows; j++) {
+      $(".path-grid").append(`<p id='grid_row_${j}' class = 'grid-row'></p>`);
+      $(`#grid_row_${j}`).append(
+        `<div id='row_${j}' class='grid-row-div'></div>`
+      );
+      allNodes[j] = new Array(numCols);
+      for (var i = 0; i < numCols; i++) {
+        $(`#row_${j}`).append(
+          `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
+        );
+        allNodes[j][i] = new Node(j, i);
+      }
+    }
+
+    placePointers();
+  }
+};
 
 var current_algo = $("#current-algo").attr("value");
 
