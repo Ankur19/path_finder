@@ -4,6 +4,7 @@ $(document).ready(function() {
   var algo = url.searchParams.get("algo");
   if (algo == undefined || algo == "djikstra") {
     $("#start").click(function() {
+      currentSelection = "";
       if (currentSource != currentDestination && currentRun == 0) {
         //Run Bellman Ford
         //Find the current Node

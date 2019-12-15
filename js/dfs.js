@@ -4,6 +4,7 @@ $(document).ready(function() {
   var algo = url.searchParams.get("algo");
   if (algo == "dfs") {
     $("#start").click(function() {
+      currentSelection = "";
       if (currentSource != currentDestination && currentRun == 0) {
         //Run Dfs
         //Find the current Source Node

@@ -65,6 +65,12 @@ function onDragStart(event) {
     currentSelection = event.target.id;
   }
 }
+//if user stops pressing the mouse, wall wont generate until build wall is clicked again
+var checkWall = function(event) {
+  if (currentSelection == "wall") {
+    currentSelection = "";
+  }
+};
 
 function onDragOver(event) {
   event.preventDefault();
@@ -163,7 +169,7 @@ var ui = function(type) {
       allNodes[j] = new Array(numCols);
       for (var i = 0; i < numCols; i++) {
         $(`#row_${j}`).append(
-          `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
+          `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);' ></div>`
         );
         allNodes[j][i] = new Node(j, i);
       }
