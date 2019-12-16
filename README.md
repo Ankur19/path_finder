@@ -1,6 +1,7 @@
 # Path Finder
 
-web app to visualize common path finding algorithms and tree search algorithms
+web app to visualize common path finding algorithms and tree search algorithms.
+* Try it here: https://ankur19.github.io/path_finder/
 
 ### Coded in vanilla javascript
 
