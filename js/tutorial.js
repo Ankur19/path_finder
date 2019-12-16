@@ -1,8 +1,9 @@
 $(document).ready(function() {
   if ($("#first-time-ind").attr("value") != "0") {
     updateTutorialModal($("#first-time-ind").attr("value"));
-
-    $("#tutorial").modal("show");
+    setTimeout(() => {
+      $("#tutorial").modal("show");
+    }, 1000);
   }
 
   $("#tutorial-next").click(function() {
