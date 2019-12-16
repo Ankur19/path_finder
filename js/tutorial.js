@@ -4,7 +4,7 @@ $(document).ready(function() {
       updateTutorialModal($("#first-time-ind").attr("value"));
       $("#tutorial").modal("show");
     }
-  }, 500);
+  }, 1000);
 
   $("#tutorial-next").click(function() {
     if (parseInt($("#first-time-ind").attr("value")) < 5) {
