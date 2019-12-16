@@ -3,12 +3,9 @@ $(document).ready(function() {
   var parsedUrl = new URL(url);
   var algo = parsedUrl.searchParams.get("algo");
 
-  if (url.indexOf("index.html") == -1 || algo == undefined) {
-    $("#first-time-ind").attr("value", "1");
-    if (url.indexOf("index.html") == -1) {
-      url = url + "index.html?algo=djikstra";
-      window.location.assign(url);
-    }
+  if (url.indexOf("index.html") == -1) {
+    url = url + "index.html?algo=djikstra";
+    window.location.assign(url);
   }
   if (algo == undefined || algo == "djikstra") {
     $("#nav-algo").append("  " + "Djikstra's Algorithm");
@@ -18,3 +15,10 @@ $(document).ready(function() {
     $("#current-algo").attr("value", "tree");
   }
 });
+
+var url = window.location.href;
+var parsedUrl = new URL(url);
+var algo = parsedUrl.searchParams.get("algo");
+if (url.indexOf("index.html") == -1 || algo == undefined) {
+  $("#first-time-ind").attr("value", "1");
+}
