@@ -38,10 +38,7 @@ $(document).ready(function() {
           }
         }
         currentRun += 1;
-        visualizeDfsNode(visitOrder);
-        if (!found) {
-          alert("Destination Not Found");
-        }
+        visualizeDfsNode(visitOrder, found);
         $("#source").attr("draggable", "false");
         $("#destination").attr("draggable", "false");
       }
@@ -49,9 +46,12 @@ $(document).ready(function() {
   }
 });
 
-var visualizeDfsNode = async function(nodeList) {
+var visualizeDfsNode = async function(nodeList, found) {
   for (var i = 0; i < nodeList.length; i++) {
     await updateDfsNodeColor(nodeList[i]);
+  }
+  if (!found) {
+    alert("Destination Not Found");
   }
 };
 

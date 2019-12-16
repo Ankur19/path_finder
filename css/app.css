@@ -117,3 +117,35 @@ nav {
   margin-bottom: 0px;
   margin-top: 1px;
 }
+
+.modal-content {
+  width: 800px;
+  height: 800px;
+  position: fixed;
+  top: 15%;
+  left: 20%;
+}
+#modal-header-content {
+  margin-right: 400px;
+}
+#path-gif {
+  border: 1px solid grey;
+  height: 202px;
+  width: 402px;
+}
+#modal-bodytext {
+  text-align: center;
+}
+
+.sep {
+  height: 50px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
