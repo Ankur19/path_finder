@@ -15,6 +15,5 @@ web app to visualize common path finding algorithms and tree search algorithms.
 
 - Dijkstra's Algorithm
 - Depth First Search
-
-* Breadth First Search
-* (Floyd warshall, A star and others coming soon)
+- Breadth First Search
+- (Floyd warshall, A star and others coming soon)
