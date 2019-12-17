@@ -16,5 +16,8 @@ $(document).ready(function() {
   } else if (algo == "dfs") {
     $("#nav-algo").append("  " + "Depth First Search");
     $("#current-algo").attr("value", "tree");
+  } else if (algo == "bfs") {
+    $("#nav-algo").append("  " + "Breadth First Search");
+    $("#current-algo").attr("value", "tree");
   }
 });
