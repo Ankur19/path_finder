@@ -34,6 +34,11 @@ nav {
   border-top: 0px solid grey;
   border-left: 0px solid grey;
   display: inline-flex;
+  border-radius: 15%;
+}
+.grid-element:hover {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 }
 #grid-container {
   margin-left: 50px;
@@ -61,6 +66,9 @@ nav {
   margin: 0px;
   padding: 0px;
   display: none;
+}
+.pointer-image:hover {
+  cursor: pointer;
 }
 
 .circle-animation {
