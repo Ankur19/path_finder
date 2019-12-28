@@ -165,8 +165,12 @@ var ui = function(type) {
       );
       allNodes[j] = new Array(numCols); // The comments in between the divs actally make the divs inline without whitespaces in between
       for (var i = 0; i < numCols; i++) {
+        let topRowClass = "'";
+        if (j === 0) {
+          topRowClass = " top-row-grid-element'";
+        }
         $(`#row_${j}`).append(
-          `<div id = 'col_${i}' class='grid-element' ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
+          `<div id = 'col_${i}' class='grid-element${topRowClass} ondragenter='onDragEnter(event);' ondragleave='onDragLeave(event);' ondragover='onDragOver(event);' ondrop='onDrop(event);'></div>`
         );
 
         allNodes[j][i] = new Node(j, i);

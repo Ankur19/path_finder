@@ -24,7 +24,9 @@ nav {
   height: 20px;
   display: inline-block;
 }
-
+.top-row-grid-element {
+  border-top: 1px solid grey !important;
+}
 .grid-element {
   width: 20px;
   height: 20px;
@@ -50,10 +52,6 @@ nav {
   margin-top: 5px;
   margin-right: 5px;
   float: left;
-}
-
-#row_0 {
-  border-top: 1px solid grey;
 }
 
 #col_0 {
