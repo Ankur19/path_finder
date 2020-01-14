@@ -14,7 +14,9 @@ nav {
   padding: 0px;
   margin: 0px;
   height: 20px;
-  width: 1600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border: 0px;
   text-align: center;
 }
@@ -43,15 +45,13 @@ nav {
   border-bottom: 2px solid black;
 }
 #grid-container {
-  margin-left: 50px;
   margin-top: 10px;
 }
 .path-grid {
-  width: 1600px;
-  margin-left: 30px;
   margin-top: 5px;
-  margin-right: 5px;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #col_0 {
@@ -79,12 +79,13 @@ nav {
 }
 
 #setting-buttons {
-  margin-right: 50px;
-  float: left;
+  margin: 10px;
+  align-self: left;
 }
 
 #legend {
   display: inline;
+  margin: 5px;
 }
 .legend-elem {
   height: 20px !important;
@@ -104,8 +105,9 @@ nav {
 
 #top-elem {
   margin-top: 10px;
-  margin-left: 30px;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #visited-legend {
   background-color: skyblue;
@@ -125,10 +127,12 @@ nav {
 }
 
 .modal-content {
-  width: 800px;
+  width: 50vw;
   height: 800px;
   position: absolute;
-  top: 10vh;
+  top: 0px !important;
+  margin: 0px !important;
+  opacity: 0.9;
 }
 #modal-header-content {
   margin-right: 400px;
